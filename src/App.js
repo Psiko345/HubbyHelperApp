@@ -1,5 +1,5 @@
 import React from 'react';
-import buySomethingIcon from './components/buySomethingIcon';
+import BuySomethingIcon from './components/BuySomethingIcon';
 import './App.css';
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
           Give me something to buy!
         </p>
 
-        <buySomethingIcon />
+        <BuySomethingIcon />
 
       </header>
     </div>
