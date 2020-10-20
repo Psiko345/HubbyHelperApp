@@ -77,12 +77,4 @@ class BudgetSelection extends Component {
     }
 }
 
-
-
-
-
-
-
-// function BudgetSelection() {
-// }
-// export default BudgetSelection; 
+export default BudgetSelection; 

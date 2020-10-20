@@ -1,13 +1,5 @@
-.App {
+.App-main-page {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
   background-color: #56178d;
   min-height: 100vh;
   display: flex;
@@ -17,3 +9,4 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+

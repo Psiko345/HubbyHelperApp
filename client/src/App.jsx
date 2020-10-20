@@ -1,19 +1,23 @@
 import React from 'react';
-import BuySomethingIcon from './components/BuySomethingIcon';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import HomePage from './components/pages/home';
+import GiftGenerator from './components/pages/gift_generator'
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Give me something to buy!
-        </p>
+    <Router>
+      <div className="App-main-page">
+        <header className="App-page-1">
 
-        <BuySomethingIcon />
+          <HomePage />
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/gift_generator" component={GiftGenerator} />
 
-      </header>
-    </div>
+        </header>
+      </div>
+    </Router>
+
   );
 }
 
