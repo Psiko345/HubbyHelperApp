@@ -10,7 +10,6 @@ function App() {
       <div className="App-main-page">
         <header className="App-page-1">
 
-          <HomePage />
           <Route exact path="/" component={HomePage} />
           <Route exact path="/gift_generator" component={GiftGenerator} />
 
