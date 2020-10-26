@@ -1,0 +1,43 @@
+import React from 'react';
+import BudgetSelection from "../gift_generator/BudgetSelection"
+import GiftCategories from "../gift_generator/gift_categories"
+import { Button } from '../Button'
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        flexGrow: 1,
+    },
+    paper: {
+        padding: theme.spacing(2),
+        textAlign: 'center',
+        color: theme.palette.text.secondary,
+    },
+}));
+
+function GiftGenerator() {
+    const classes = useStyles();
+
+
+    return (
+
+        <div className={classes.root}>
+            <Grid container spacing={3}>
+                <Grid item xs>
+                    <Paper className={classes.paper}><BudgetSelection /></Paper>
+                </Grid>
+                <Grid item xs>
+                    <Paper className={classes.paper}><GiftCategories /></Paper>
+                </Grid>
+                <Grid item xs>
+                    <Paper className={classes.paper}><Button>Generate Gift</Button></Paper>
+                </Grid>
+            </Grid>
+            {/* <div className="App-main-page"> */}
+        </div>
+    )
+}
+
+export default GiftGenerator;

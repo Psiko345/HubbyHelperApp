@@ -1,4 +1,4 @@
-var gifts = [
+export const gifts = [
     //Jewelry
     {
         name: "Necklace",
