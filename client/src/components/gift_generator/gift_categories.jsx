@@ -4,7 +4,6 @@ import FormLabel from '@material-ui/core/FormLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormHelperText from '@material-ui/core/FormHelperText';
 import Checkbox from '@material-ui/core/Checkbox';
 
 const useStyles = makeStyles((theme) => ({
@@ -37,7 +36,7 @@ function GiftCategories() {
     return (
         <div className={classes.root}>
             <FormControl required error={error} component="fieldset" className={classes.formControl}>
-                <FormLabel component="legend"> <h1 className="selectorHeader">Select at least one catagory.</h1> </FormLabel>
+                <FormLabel component="legend"> <h1 className="selectorHeader">Select a gift catagory</h1> </FormLabel>
                 <FormGroup>
                     <FormControlLabel
                         control={<Checkbox checked={jewelry} onChange={handleChange} name="jewelry" />}
@@ -64,7 +63,6 @@ function GiftCategories() {
                         label="Shoes"
                     />
                 </FormGroup>
-                <FormHelperText>You need to select at least one category</FormHelperText>
             </FormControl>
 
         </div>
