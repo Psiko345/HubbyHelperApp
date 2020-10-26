@@ -1,6 +1,7 @@
 import React from 'react';
 import BudgetSelection from "../gift_generator/BudgetSelection"
 import GiftCategories from "../gift_generator/gift_categories"
+import gifts from '../gift_generator/gifts_list'
 import { Button } from '../Button'
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -17,7 +18,9 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function GiftGenerator() {
+// let possibleMatchingGifts = gifts.filter( x => isInPriceRange(x)).filter( x => isInGiftCategory(x))
+
+function GiftGeneratorPage() {
     const classes = useStyles();
 
 
@@ -32,12 +35,11 @@ function GiftGenerator() {
                     <Paper className={classes.paper}><GiftCategories /></Paper>
                 </Grid>
                 <Grid item xs>
-                    <Paper className={classes.paper}><Button>Generate Gift</Button></Paper>
+                    <Paper className={classes.paper}><Button onClick=''>Generate Gift</Button></Paper>
                 </Grid>
             </Grid>
-            {/* <div className="App-main-page"> */}
         </div>
     )
 }
 
-export default GiftGenerator;
+export default GiftGeneratorPage;
