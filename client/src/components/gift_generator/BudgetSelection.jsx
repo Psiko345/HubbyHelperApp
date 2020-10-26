@@ -18,43 +18,42 @@ const useStyles = makeStyles((theme) => ({
 function BudgetSelection() {
     const classes = useStyles();
     const [state, setState] = React.useState({
-        low: false,
-        med: false,
-        high: false,
-        ultra: false,
+        budgetLow: false,
+        budgetMed: false,
+        budgetHigh: false,
+        budgetUltra: false,
     });
 
     const handleChange = (event) => {
         setState({ ...state, [event.target.name]: event.target.checked });
     };
 
-    const { low, med, high, ultra } = state
-    const error = [low, med, high, ultra].filter((v) => v).length <= 0;
+    const { budgetLow, budgetMed, budgetHigh, budgetUltra } = state
+    // const error = [budgetLow, budgetMed, budgetHigh, budgetUltra].filter((v) => v).length <= 1;
 
     return (
         <div className={classes.root}>
-            <FormControl required error={error} component="fieldset" className={classes.formControl}>
+            <FormControl component="fieldset" className={classes.formControl}>
                 <FormLabel component="legend"> <h1 className="selectorHeader">Select a budget</h1> </FormLabel>
                 <FormGroup>
                     <FormControlLabel
-                        control={<Checkbox checked={low} onChange={handleChange} name="low" />}
-                        label="A little something"
+                        control={<Checkbox checked={budgetLow} onChange={handleChange} name="budgetLow" />}
+                        label="A little something (<$100)"
                     />
                     <FormControlLabel
-                        control={<Checkbox checked={med} onChange={handleChange} name="med" />}
-                        label="A special gift"
+                        control={<Checkbox checked={budgetMed} onChange={handleChange} name="budgetMed" />}
+                        label="A special gift ($100-$500)"
                     />
                     <FormControlLabel
-                        control={<Checkbox checked={high} onChange={handleChange} name="high" />}
-                        label="A spoiling"
+                        control={<Checkbox checked={budgetHigh} onChange={handleChange} name="budgetHigh" />}
+                        label="A spoiling ($500-$1000)"
                     />
                     <FormControlLabel
-                        control={<Checkbox checked={ultra} onChange={handleChange} name="ultra" />}
-                        label="Something Big ticket"
+                        control={<Checkbox checked={budgetUltra} onChange={handleChange} name="budgetUltra" />}
+                        label="Something Big ticket ($1000+)"
                     />
                 </FormGroup>
             </FormControl>
-
         </div>
     )
 }
