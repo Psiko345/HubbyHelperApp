@@ -23,9 +23,7 @@ const useStyles = makeStyles({
 });
 
 function GiftGenerator() {
-
     const classes = useStyles();
-
     const [state, dispatch] = useReducer((state, action) => {
         if (action === "generateGift") {
             return

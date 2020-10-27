@@ -21,19 +21,21 @@ const useStyles = makeStyles((theme) => ({
 function GiftGeneratorPage() {
     const classes = useStyles();
 
+    let budgetSelection = { budgetMedium: false }
+    let giftCategories = {}
 
     return (
 
         <div className={classes.root}>
             <Grid container spacing={3}>
                 <Grid item xs>
-                    <Paper className={classes.paper}><BudgetSelection /></Paper>
+                    <Paper className={classes.paper}><BudgetSelection model={budgetSelection} /></Paper>
                 </Grid>
                 <Grid item xs>
-                    <Paper className={classes.paper}><GiftCategories /></Paper>
+                    <Paper className={classes.paper}><GiftCategories model={giftCategories} /></Paper>
                 </Grid>
                 <Grid item xs>
-                    <Paper className={classes.paper}><GiftGenerator /></Paper>
+                    <Paper className={classes.paper}><GiftGenerator categories={giftCategories} budget={budgetSelection} /></Paper>
                 </Grid>
             </Grid>
         </div>

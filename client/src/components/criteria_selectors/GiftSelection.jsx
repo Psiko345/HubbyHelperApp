@@ -17,7 +17,8 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function GiftCategories() {
+function GiftCategories(props) {
+
     const classes = useStyles();
     const [state, dispatch] = useReducer((state, action) => {
         if (action === "allowJewelry") {
