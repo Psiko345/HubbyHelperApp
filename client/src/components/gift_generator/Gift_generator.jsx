@@ -1,10 +1,8 @@
-import BudgetSelection from './BudgetSelection'
-import GiftCategory from './gift_categories'
-
-let budgetCategory = {}
 
 
-let possibleMatchingGifts = gifts.filter(() => isInPriceRange(x)).filter(x => isInGiftCategory(x))
+// let possibleMatchingGifts = gifts
+// .filter(() => isInPriceRange(x))
+// .filter(x => isInGiftCategory(x))
 
 /*
 Take budget selection, apply to gift categories

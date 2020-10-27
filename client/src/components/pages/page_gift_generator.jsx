@@ -18,7 +18,6 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-// let possibleMatchingGifts = gifts.filter( x => isInPriceRange(x)).filter( x => isInGiftCategory(x))
 
 function GiftGeneratorPage() {
     const classes = useStyles();
