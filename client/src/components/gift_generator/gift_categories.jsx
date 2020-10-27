@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useReducer } from 'react';
+import { useEffect } from 'react';
+import gifts from './gifts_list'
 import { makeStyles } from '@material-ui/core/styles';
 import FormLabel from '@material-ui/core/FormLabel';
 import FormControl from '@material-ui/core/FormControl';
@@ -17,49 +19,82 @@ const useStyles = makeStyles((theme) => ({
 
 function GiftCategories() {
     const classes = useStyles();
-    const [state, setState] = React.useState({
-        jewelry: true,
-        flowers: true,
-        getaways: true,
-        consumables: true,
-        clothes: true,
-        shoes: true,
-    });
+    const [state, dispatch] = useReducer((state, action) => {
+        if (action === "allowJewelry") {
+            const newState = { ...state };
+            newState.jewelry = !newState.jewelry
+            return newState
+        } else if (action === "allowFlowers") {
+            const newState = { ...state };
+            newState.flowers = !newState.flowers
+            return newState;
+        } else if (action === "allowGetaways") {
+            const newState = { ...state };
+            newState.getaways = !newState.getaways
+            return newState;
+        } else if (action === "allowConsumables") {
+            const newState = { ...state };
+            newState.consumables = !newState.consumables
+            return newState;
+        } else if (action === "allowClothes") {
+            const newState = { ...state };
+            newState.clothes = !newState.clothes
+            return newState;
+        } else if (action === "allowShoes") {
+            const newState = { ...state };
+            newState.shoes = !newState.shoes
+            return newState;
+        } else {
+            return state;
+        }
+    },
+        {
+            jewelry: false,
+            flowers: false,
+            getaways: false,
+            consumables: false,
+            clothes: false,
+            shoes: false,
+        });
+
+    useEffect(() => {
+        console.log(state)
+    })
 
     const handleChange = (event) => {
-        setState({ ...state, [event.target.name]: event.target.checked });
+        dispatch({ ...state, [event.target.name]: event.target.checked });
     };
 
     const { jewelry, flowers, getaways, consumables, clothes, shoes } = state
-    const error = [jewelry, flowers, getaways, consumables, clothes, shoes].filter((v) => v).length <= 1;
+    // const error = [jewelry, flowers, getaways, consumables, clothes, shoes].filter((v) => v).length <= 1;
 
     return (
         <div className={classes.root}>
-            <FormControl required error={error} component="fieldset" className={classes.formControl}>
-                <FormLabel component="legend"> <h1 className="selectorHeader">Select a gift catagory</h1> </FormLabel>
+            <FormControl component="fieldset" className={classes.formControl}>
+                <FormLabel component="legend"> <h1 className="selectorHeader">Select some gift catagories</h1> </FormLabel>
                 <FormGroup>
                     <FormControlLabel
-                        control={<Checkbox checked={jewelry} onChange={handleChange} name="jewelry" />}
+                        control={<Checkbox checked={jewelry} onChange={handleChange} onClick={() => dispatch("allowJewelry")} name="jewelry" />}
                         label="Jewelry"
                     />
                     <FormControlLabel
-                        control={<Checkbox checked={flowers} onChange={handleChange} name="flowers" />}
+                        control={<Checkbox checked={flowers} onChange={handleChange} onClick={() => dispatch("allowFlowers")} name="flowers" />}
                         label="Flowers"
                     />
                     <FormControlLabel
-                        control={<Checkbox checked={getaways} onChange={handleChange} name="getaways" />}
+                        control={<Checkbox checked={getaways} onChange={handleChange} onClick={() => dispatch("allowGetaways")} name="getaways" />}
                         label="Getaways"
                     />
                     <FormControlLabel
-                        control={<Checkbox checked={consumables} onChange={handleChange} name="consumables" />}
+                        control={<Checkbox checked={consumables} onChange={handleChange} onClick={() => dispatch("allowConsumables")} name="consumables" />}
                         label="Consumables"
                     />
                     <FormControlLabel
-                        control={<Checkbox checked={clothes} onChange={handleChange} name="clothes" />}
+                        control={<Checkbox checked={clothes} onChange={handleChange} onClick={() => dispatch("allowClothes")} name="clothes" />}
                         label="Clothes"
                     />
                     <FormControlLabel
-                        control={<Checkbox checked={shoes} onChange={handleChange} name="shoes" />}
+                        control={<Checkbox checked={shoes} onChange={handleChange} onClick={() => dispatch("allowShoes")} name="shoes" />}
                         label="Shoes"
                     />
                 </FormGroup>
