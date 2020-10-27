@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
 import { useEffect } from 'react';
-import gifts from './gifts_list'
+// import gifts from './gifts_list'
 import { makeStyles } from '@material-ui/core/styles';
 import FormLabel from '@material-ui/core/FormLabel';
 import FormControl from '@material-ui/core/FormControl';

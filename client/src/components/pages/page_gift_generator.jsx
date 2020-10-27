@@ -1,8 +1,7 @@
 import React from 'react';
-import BudgetSelection from "../gift_generator/BudgetSelection"
-import GiftCategories from "../gift_generator/gift_categories"
-import gifts from '../gift_generator/gifts_list'
-import { Button } from '../Button'
+import BudgetSelection from "../criteria_selectors/BudgetSelection"
+import GiftCategories from "../criteria_selectors/GiftSelection"
+import GiftGenerator from '../gift_generator/Gift_generator'
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
@@ -34,7 +33,7 @@ function GiftGeneratorPage() {
                     <Paper className={classes.paper}><GiftCategories /></Paper>
                 </Grid>
                 <Grid item xs>
-                    <Paper className={classes.paper}><Button onClick=''>Generate Gift</Button></Paper>
+                    <Paper className={classes.paper}><GiftGenerator /></Paper>
                 </Grid>
             </Grid>
         </div>
