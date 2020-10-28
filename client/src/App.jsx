@@ -4,8 +4,11 @@ import HomePage from './components/pages/home';
 import Navbar from './components/Navbar/Navbar';
 import GiftGeneratorPage from './components/pages/page_gift_generator'
 import './App.css';
+import Profile from './components/pages/Profile';
 
 function App() {
+
+
   return (
     <Router>
       <Navbar />
@@ -14,6 +17,7 @@ function App() {
 
           <Route exact path="/" component={HomePage} />
           <Route exact path="/gift_generator" component={GiftGeneratorPage} />
+          <Route exact path="/profile" component={Profile} />
 
         </header>
       </div>

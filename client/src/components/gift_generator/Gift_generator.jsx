@@ -11,7 +11,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import { display } from '@material-ui/system';
-import GiftIcon from './gift-icon-52.png'
+import GiftIcon from './gift-icon-52.png';
 
 const useStyles = makeStyles({
     root: {
@@ -22,40 +22,42 @@ const useStyles = makeStyles({
     },
 });
 
-function GiftGenerator() {
+function GiftGenerator({ budget, categories }) {
     const classes = useStyles();
-    const [state, dispatch] = useReducer((state, action) => {
-        if (action === "generateGift") {
-            return
-        }
-    },
-        {
 
-        }
-    )
+    const something = JSON.stringify(budget);
+    // const possibleMatchingGifts = gifts
+    //     .filter(x => isInPriceRange(x, budget))
+    //     .filter(x => isInGiftCategory(x, categories));
+
+    // const chosenGift = possibleMatchingGifts.random();
+    const showCard = false;
 
     return (
         <div>
-            <Button onClick={() => dispatch("generateGift")}>Generate Gift!</Button>
+            <Button >Generate Gift!</Button>
             <br>
+
             </br>
-            <Card className={classes.root}>
-                <CardActionArea>
-                    <Typography gutterBottom variant="h5" component="h2">
-                        Let's get her some:
+            {showCard &&
+                <Card className={classes.root}>
+                    <CardActionArea>
+                        <Typography gutterBottom variant="h5" component="h2">
+                            Let's get her some:
                     </Typography>
-                    <CardMedia
-                        className={classes.media}
-                        image={GiftIcon}
-                        title="placeholder gift icon"
-                    />
-                    <CardContent>
-                        <Typography variant="body2" color="textSecondary" component="p">
-                            /gift/, with a budget of: /budget/
-                        </Typography>
-                    </CardContent>
-                </CardActionArea>
-            </Card>
+                        <CardMedia
+                            className={classes.media}
+                            image={GiftIcon}
+                            title="placeholder gift icon"
+                        />
+                        <CardContent>
+                            <Typography variant="body2" color="textSecondary" component="p">
+                                {/* {chosenGift.name}, with a budget of: {chosenGift.minimumPrice}-{chosenGift.maximumPrice} */}
+                            </Typography>
+                        </CardContent>
+                    </CardActionArea>
+                </Card>
+            }
         </div>
     )
 }
@@ -63,8 +65,8 @@ function GiftGenerator() {
 export default GiftGenerator
 
 // let possibleMatchingGifts = gifts
-// .filter(() => isInPriceRange(x))
-// .filter(x => isInGiftCategory(x))
+// .filter(x => isInPriceRange(x, budget))
+// .filter(x => isInGiftCategory(x, categories))
 
 /*
 Take budget selection, apply to gift categories
