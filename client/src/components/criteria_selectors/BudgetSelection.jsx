@@ -27,14 +27,15 @@ function BudgetSelection() {
     })
 
 
-
     useEffect(() => {
         console.log(budget)
     })
 
+
     const handleChange = (event) => {
         setBudget({ ...budget, [event.target.name]: event.target.checked });
     };
+
 
     const { budgetLow, budgetMed, budgetHigh, budgetUltra } = budget
     // const error = [budgetLow, budgetMed, budgetHigh, budgetUltra].filter((v) => v).length <= 1;

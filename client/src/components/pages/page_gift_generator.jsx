@@ -36,18 +36,28 @@ function GiftGeneratorPage() {
         shoes: false,
     });
 
+    const [showCard, setShowCard] = useState({
+        showCard: false
+    });
+
     return (
 
         <div className={classes.root}>
             <Grid container spacing={3}>
                 <Grid item xs>
-                    <Paper className={classes.paper}><BudgetSelection budget={budget} setBudget={setBudget} /></Paper>
+                    <Paper className={classes.paper}>
+                        <BudgetSelection budget={budget} setBudget={setBudget} />
+                    </Paper>
                 </Grid>
                 <Grid item xs>
-                    <Paper className={classes.paper}><GiftCategories categories={categories} setCategories={setCategories} /></Paper>
+                    <Paper className={classes.paper}>
+                        <GiftCategories categories={categories} setCategories={setCategories} />
+                    </Paper>
                 </Grid>
                 <Grid item xs>
-                    <Paper className={classes.paper}><GiftGenerator budget={budget} categories={categories} /></Paper>
+                    <Paper className={classes.paper}>
+                        <GiftGenerator budget={budget} categories={categories} showCard={showCard} setShowCard={setShowCard} />
+                    </Paper>
                 </Grid>
             </Grid>
         </div>

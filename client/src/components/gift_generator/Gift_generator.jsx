@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react'
+import React, { useState } from 'react'
 import GiftCategories from '../criteria_selectors/GiftSelection'
 import BudgetSelection from '../criteria_selectors/BudgetSelection'
 import gifts from '../criteria_selectors/gifts_list'
@@ -10,8 +10,8 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-import { display } from '@material-ui/system';
 import GiftIcon from './gift-icon-52.png';
+import { useCallback } from 'react'
 
 const useStyles = makeStyles({
     root: {
@@ -24,18 +24,21 @@ const useStyles = makeStyles({
 
 function GiftGenerator({ budget, categories }) {
     const classes = useStyles();
-
+    const [showCard, setShowCard] = useState({
+        showCard: false
+    })
     const something = JSON.stringify(budget);
     // const possibleMatchingGifts = gifts
     //     .filter(x => isInPriceRange(x, budget))
     //     .filter(x => isInGiftCategory(x, categories));
 
-    // const chosenGift = possibleMatchingGifts.random();
-    const showCard = false;
+    // const chosenGift = possibleMatchingGifts.random(); 
+
+    const handleShowCard = useCallback(() => setShowCard(!showCard))
 
     return (
         <div>
-            <Button >Generate Gift!</Button>
+            <Button onClick={handleShowCard}>Generate Gift!</Button>
             <br>
 
             </br>
