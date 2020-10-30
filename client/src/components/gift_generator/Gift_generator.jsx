@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import GiftCategories from '../criteria_selectors/GiftSelection'
 import BudgetSelection from '../criteria_selectors/BudgetSelection'
 import gifts from '../criteria_selectors/gifts_list'
@@ -11,7 +11,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import GiftIcon from './gift-icon-52.png';
-import { useCallback } from 'react'
+
 
 const useStyles = makeStyles({
     root: {
@@ -24,9 +24,12 @@ const useStyles = makeStyles({
 
 function GiftGenerator({ budget, categories }) {
     const classes = useStyles();
-    const [showCard, setShowCard] = useState({
-        showCard: false
+    const [showCard, setShowCard] = useState(false)
+
+    useEffect(() => {
+        console.log(showCard)
     })
+
     const something = JSON.stringify(budget);
     // const possibleMatchingGifts = gifts
     //     .filter(x => isInPriceRange(x, budget))
@@ -34,15 +37,13 @@ function GiftGenerator({ budget, categories }) {
 
     // const chosenGift = possibleMatchingGifts.random(); 
 
-    const handleShowCard = useCallback(() => setShowCard(!showCard))
+    const handleShowCard = () => setShowCard(!showCard)
 
     return (
         <div>
             <Button onClick={handleShowCard}>Generate Gift!</Button>
-            <br>
 
-            </br>
-            {showCard &&
+            {showCard && (
                 <Card className={classes.root}>
                     <CardActionArea>
                         <Typography gutterBottom variant="h5" component="h2">
@@ -60,7 +61,7 @@ function GiftGenerator({ budget, categories }) {
                         </CardContent>
                     </CardActionArea>
                 </Card>
-            }
+            )}
         </div>
     )
 }

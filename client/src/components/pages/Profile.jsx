@@ -6,6 +6,10 @@ const Profile = () => {
     const { user, isAuthenticated, isLoading } = useAuth0();
 
     useEffect(() => {
+        console.log({ isLoading })
+    })
+
+    useEffect(() => {
         console.log({ isAuthenticated })
     })
 
@@ -22,6 +26,7 @@ const Profile = () => {
             </div>
         )
     );
+
 };
 
 export default Profile;
