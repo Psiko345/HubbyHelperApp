@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import HomePage from './components/pages/home';
 import Navbar from './components/Navbar/Navbar';
@@ -8,6 +8,9 @@ import Profile from './components/pages/Profile';
 
 function App() {
 
+  useEffect(() => {
+    console.log(process.env)
+  })
 
   return (
     <Router>
