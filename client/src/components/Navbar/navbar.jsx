@@ -3,6 +3,7 @@ import { MenuItems } from "./MenuItems";
 import LoginButton from "../Auth0/LoginButton"
 import LogoutButton from "../Auth0/LogoutButton"
 import './Navbar.css'
+import AuthenticationButton from '../Auth0/AuthenticationButton'
 
 class Navbar extends Component {
     state = { clicked: false }
@@ -29,8 +30,7 @@ class Navbar extends Component {
                         )
                     })}
                 </ul>
-                <LoginButton />
-                <LogoutButton />
+                <AuthenticationButton />
             </nav>
         )
     }
