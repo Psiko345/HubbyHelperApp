@@ -4,18 +4,17 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Auth0Provider } from "@auth0/auth0-react";
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 ReactDOM.render(
-  <BrowserRouter>
-    <Auth0Provider
-      domain="dev-5ytxbnts.au.auth0.com"
-      clientId="sbl2r62UXIX1URnJJBQnppE4vobMZoHx"
-      redirectUri={window.location.origin}
-    >
+  <Router>
+    <Auth0Provider>
+
       <App />
+
     </Auth0Provider>
-  </BrowserRouter>,
+
+  </Router>,
   document.getElementById('root')
 
 );
