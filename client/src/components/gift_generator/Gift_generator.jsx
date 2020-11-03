@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import GiftCategories from '../criteria_selectors/GiftSelection'
 import BudgetSelection from '../criteria_selectors/BudgetSelection'
-import gifts from '../criteria_selectors/gifts_list'
+import { Gifts } from '../criteria_selectors/gifts_list'
 import { Button } from '../Button'
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -30,12 +30,27 @@ function GiftGenerator({ budget, categories }) {
         console.log(showCard)
     })
 
-    const something = JSON.stringify(budget);
-    // const possibleMatchingGifts = gifts
-    //     .filter(x => isInPriceRange(x, budget))
-    //     .filter(x => isInGiftCategory(x, categories));
+    const isInGiftCategory = (aGift, categories) => {
+        // console.log({ aGift, categories })
+        if (aGift.category === "jewelry" && categories.jewelry)
+            return true
+        if (aGift.category === "flowers" && categories.flowers)
+            return true
+        if (aGift.category === "getaways" && categories.getaways)
+            return true
+        if (aGift.category === "consumables" && categories.consumables)
+            return true
+        if (aGift.category === "clothes" && categories.clothes)
+            return true
+        if (aGift.category === "shoes" && categories.shoes)
+            return true
+        return false
+    }
 
-    // const chosenGift = possibleMatchingGifts.random(); 
+    // const something = JSON.stringify(budget);
+    const possibleMatchingGifts = Gifts.filter(aGift => isInGiftCategory(aGift, categories));
+
+    // const chosenGift = possibleMatchingGifts.random();
 
     const handleShowCard = () => setShowCard(!showCard)
 
@@ -56,7 +71,7 @@ function GiftGenerator({ budget, categories }) {
                         />
                         <CardContent>
                             <Typography variant="body2" color="textSecondary" component="p">
-                                {/* {chosenGift.name}, with a budget of: {chosenGift.minimumPrice}-{chosenGift.maximumPrice} */}
+                                {/* {chosenGift.name}, with a budget of: {budget} */}
                             </Typography>
                         </CardContent>
                     </CardActionArea>
