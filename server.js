@@ -1,9 +1,14 @@
 const express = require("express");
-
+const cors = require("cors");
+const helmet = require("helmet");
+const { clientOrigins, serverPort } = require("./config/env.dev");
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = serverPort;
+
+app.use(helmet());
+app.use(cors({ origin: clientOrigins }));
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -17,6 +22,11 @@ app.use(routes);
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/hubbyhelperapp");
+
+app.use(function (err, req, res, next) {
+    console.log(err);
+    res.status(500).send(err.message);
+});
 
 // Start the API server
 app.listen(PORT, function () {

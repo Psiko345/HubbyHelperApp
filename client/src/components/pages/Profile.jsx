@@ -1,16 +1,24 @@
 import React from "react";
-import { useAuth0 } from "@auth0/auth0-react";
+import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 import { useEffect } from 'react';
+import axios from 'axios';
+
 
 const Profile = () => {
     const { user, isAuthenticated, isLoading } = useAuth0();
+    const { getAccessTokenSilently } = useAuth0();
 
     useEffect(() => {
-        console.log({ isLoading })
-    })
+        getAccessTokenSilently().then(
+            (token) => {
+                fetch("http://localhost:6060/api/gifts/protected-message", {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                }).then(res => console.log(res))
+            }
+        );
 
-    useEffect(() => {
-        console.log({ isAuthenticated })
     })
 
     if (isLoading) {
@@ -29,4 +37,6 @@ const Profile = () => {
 
 };
 
-export default Profile;
+export default withAuthenticationRequired(Profile, {
+    onRedirecting: () => <div>Loading ...</div>,
+});
