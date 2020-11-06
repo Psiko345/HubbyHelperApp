@@ -7,7 +7,9 @@ const giftSchema = new Schema({
   image: {},
   lowestBudget: String,
   highestBudget: String,
+  selectedBudget: String,
   date: { type: Date, default: Date.now },
+  owner: { type: Schema.Types.ObjectId, ref: 'User' }
 });
 
 

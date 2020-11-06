@@ -1,9 +1,12 @@
-let mongoose = require('mongoose');
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-let UserSchema = new mongoose.Schema({
+const userSchema = new Schema({
     username: String,
-    email: String,
-    giftCollection: []
+    email: { type: String, unique: true },
+    giftCollection: [{ type: Schema.Types.ObjectId, ref: 'Gift' }]
 }, { timestamps: true });
 
-mongoose.model('User', UserSchema);
+const User = mongoose.model('User', userSchema);
+
+module.exports = User

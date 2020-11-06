@@ -12,21 +12,18 @@ const giftSeed = [
         category: "jewelry",
         lowestBudget: "budgetLow",
         highestBudget: "budgetUltra",
-        date: 
     },
     {
         name: "Earrings",
         category: "jewelry",
         lowestBudget: "budgetLow",
         highestBudget: "budgetUltra",
-        date: 
     },
     {
         name: "Ring",
         category: "jewelry",
         lowestBudget: "budgetLow",
         highestBudget: "budgetUltra",
-        date: 
     },
     //Flowers
     {
@@ -34,7 +31,6 @@ const giftSeed = [
         category: "flowers",
         lowestBudget: "budgetLow",
         highestBudget: "budgetUltra",
-        date: 
     },
     {
         name: "Single",
@@ -48,21 +44,18 @@ const giftSeed = [
         category: "getaways",
         lowestBudget: "budgetLow",
         highestBudget: "budgetUltra",
-        date: 
     },
     {
         name: "A Weekend Retreat",
         category: "getaways",
         lowestBudget: "budgetLow",
         highestBudget: "budgetUltra",
-        date: 
     },
     {
         name: "A Weeks Getaway",
         category: "getaways",
         lowestBudget: "budgetLow",
         highestBudget: "budgetUltra",
-        date: 
     },
     //Consumables
     {
@@ -70,21 +63,18 @@ const giftSeed = [
         category: "consumables",
         lowestBudget: "budgetLow",
         highestBudget: "budgetUltra",
-        date: 
     },
     {
         name: "Perfume",
         category: "consumables",
         lowestBudget: "budgetLow",
         highestBudget: "budgetUltra",
-        date: 
     },
     {
         name: "Food/Drink",
         category: "consumables",
         lowestBudget: "budgetLow",
         highestBudget: "budgetUltra",
-        date: 
     },
     //Clothes
     {
@@ -92,21 +82,18 @@ const giftSeed = [
         category: "clothes",
         lowestBudget: "budgetLow",
         highestBudget: "budgetUltra",
-        date: 
     },
     {
         name: "Bottoms",
         category: "clothes",
         lowestBudget: "budgetLow",
         highestBudget: "budgetUltra",
-        date: 
     },
     {
         name: "Dress",
         category: "clothes",
         lowestBudget: "budgetLow",
         highestBudget: "budgetUltra",
-        date: 
     },
     //Shoes
     {
@@ -114,21 +101,18 @@ const giftSeed = [
         category: "shoes",
         lowestBudget: "budgetLow",
         highestBudget: "budgetUltra",
-        date: 
     },
     {
         name: "High-heels",
         category: "shoes",
         lowestBudget: "budgetLow",
         highestBudget: "budgetUltra",
-        date: 
     },
     {
         name: "Dress Shoes",
         category: "shoes",
         lowestBudget: "budgetLow",
         highestBudget: "budgetUltra",
-        date: 
     },
 ];
 

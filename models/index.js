@@ -1,3 +1,4 @@
 module.exports = {
-  Gift: require("./gift")
+  Gift: require("./gift"),
+  User: require("./user")
 };
