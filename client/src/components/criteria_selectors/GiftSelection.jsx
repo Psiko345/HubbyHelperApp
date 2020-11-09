@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-// import gifts from './gifts_list'
 import { makeStyles } from '@material-ui/core/styles';
 import FormLabel from '@material-ui/core/FormLabel';
 import FormControl from '@material-ui/core/FormControl';
@@ -17,19 +16,9 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function GiftCategories() {
+function GiftSelection({ categories, setCategories }) {
 
     const classes = useStyles();
-    const [categories, setCategories] = useState(
-        {
-            jewelry: false,
-            flowers: false,
-            getaways: false,
-            consumables: false,
-            clothes: false,
-            shoes: false,
-        });
-
 
     useEffect(() => {
         console.log(categories)
@@ -38,6 +27,7 @@ function GiftCategories() {
 
     const handleChange = (event) => {
         setCategories({ ...categories, [event.target.name]: event.target.checked });
+        console.log({ categories })
     };
 
     const { jewelry, flowers, getaways, consumables, clothes, shoes } = categories
@@ -79,4 +69,4 @@ function GiftCategories() {
     )
 }
 
-export default GiftCategories;
+export default GiftSelection;

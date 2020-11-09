@@ -18,20 +18,17 @@ const useStyles = makeStyles({
         maxWidth: 345,
     },
     media: {
-        height: 140,
+        maxHeight: 140,
     },
 });
 
-function GiftGenerator({ budget, categories }) {
+function GiftGenerator({ budget, incomingCategories }) {
     const classes = useStyles();
     const [showCard, setShowCard] = useState(false)
-
-    useEffect(() => {
-        console.log(showCard)
-    })
+    console.log({ incomingCategories })
 
     const isInGiftCategory = (aGift, categories) => {
-        // console.log({ aGift, categories })
+        console.log({ aGift, categories })
         if (aGift.category === "jewelry" && categories.jewelry)
             return true
         if (aGift.category === "flowers" && categories.flowers)
@@ -47,10 +44,30 @@ function GiftGenerator({ budget, categories }) {
         return false
     }
 
+    const toPriceRange = (budget) => {
+        if (budget.budgetLow)
+            return "< $100";
+        if (budget.budgetMed)
+            return "$100-$500";
+        if (budget.budgetHigh)
+            return "$500-$1000";
+        if (budget.budgetUltra)
+            return "$1000+";
+        return "Other";
+    }
     // const something = JSON.stringify(budget);
-    const possibleMatchingGifts = Gifts.filter(aGift => isInGiftCategory(aGift, categories));
+    let possibleMatchingGifts = Gifts.filter(aGift => isInGiftCategory(aGift, incomingCategories));
+    console.log({ possibleMatchingGifts })
 
-    // const chosenGift = possibleMatchingGifts.random();
+    let random = Math.floor(Math.random() * possibleMatchingGifts.length)
+    console.log({ random })
+
+    let chosenGift = possibleMatchingGifts[random];
+    console.log({ chosenGift })
+
+    useEffect(() => {
+        console.log({ chosenGift })
+    })
 
     const handleShowCard = () => setShowCard(!showCard)
 
@@ -69,11 +86,12 @@ function GiftGenerator({ budget, categories }) {
                             image={GiftIcon}
                             title="placeholder gift icon"
                         />
-                        <CardContent>
+                        {!chosenGift && <p>No matching gift</p>}
+                        {chosenGift && (<CardContent>
                             <Typography variant="body2" color="textSecondary" component="p">
-                                {/* {chosenGift.name}, with a budget of: {budget} */}
+                                {chosenGift.name}, with a budget of: {toPriceRange(budget)}
                             </Typography>
-                        </CardContent>
+                        </CardContent>)}
                     </CardActionArea>
                 </Card>
             )}

@@ -17,15 +17,8 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function BudgetSelection() {
+function BudgetSelection({ budget, setBudget }) {
     const classes = useStyles();
-    const [budget, setBudget] = useState({
-        budgetLow: false,
-        budgetMed: false,
-        budgetHigh: false,
-        budgetUltra: false,
-    })
-
 
     useEffect(() => {
         console.log(budget)

@@ -56,7 +56,7 @@ function GiftGeneratorPage() {
                 </Grid>
                 <Grid item xs>
                     <Paper className={classes.paper}>
-                        <GiftGenerator budget={budget} categories={categories} showCard={showCard} setShowCard={setShowCard} />
+                        <GiftGenerator budget={budget} incomingCategories={categories} showCard={showCard} setShowCard={setShowCard} />
                     </Paper>
                 </Grid>
             </Grid>
