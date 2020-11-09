@@ -94,20 +94,3 @@ function GiftGenerator({ budget, incomingCategories }) {
 }
 
 export default GiftGenerator;
-
-// let possibleMatchingGifts = gifts
-// .filter(x => isInPriceRange(x, budget))
-// .filter(x => isInGiftCategory(x, categories))
-
-/*
-Take budget selection, apply to gift categories
-
-when user clicks to generate a gift,
-check what catagories are selected,
-then select a random index number from the array of sub-categories
-combine budget and gift selection
-Generate div with budget and gift icon displayed:
-
-eg. "Let's buy her some {gifts.shoes.name.high_heels}, in the range of {budgetselection.budgetMed}"
-
-*/

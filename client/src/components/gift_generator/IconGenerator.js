@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react'
-// import { chosenGift } from './Gift_generator'
+import React from 'react'
 import necklace from './icons/necklace.png';
 import earrings from './icons/earrings.png';
 import ring from './icons/ring.png'
