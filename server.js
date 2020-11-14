@@ -21,7 +21,18 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/hubbyhelperapp");
+const uri = process.env.MONGODB_URI
+mongoose.connect(uri, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true
+}
+    || "mongodb://localhost/hubbyhelperapp");
+
+const connection = mongoose.connection;
+connection.once('open', () => {
+    console.log("Atlas connection established.")
+})
 
 app.use(function (err, req, res, next) {
     console.log(err);

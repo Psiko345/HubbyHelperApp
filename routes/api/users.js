@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const userController = require("../../controllers/userController");
+const { checkJwt } = require("../../authz/check-jwt");
 
 // Matches with "/api/user"
 router.route("/")
@@ -12,5 +13,17 @@ router
     .get(userController.findById)
     .put(userController.update)
     .delete(userController.remove);
+
+router.post("/", checkJwt, (req, res) => {
+    return userController.create(req, res)
+})
+
+router.get("/:id", checkJwt, (req, res) => {
+    return userController.findById(req, res)
+})
+
+router.put("/:id", checkJwt, (req, res) => {
+    return userController.update(req, res)
+})
 
 module.exports = router;

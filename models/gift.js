@@ -5,11 +5,8 @@ const giftSchema = new Schema({
   name: { type: String, required: true },
   category: { type: String, required: true },
   image: {},
-  lowestBudget: String,
-  highestBudget: String,
-  selectedBudget: String,
-  date: { type: Date, default: Date.now },
-  owner: { type: Schema.Types.ObjectId, ref: 'User' }
+  price: Number,
+  date: { type: Date, default: Date.now }
 });
 
 
