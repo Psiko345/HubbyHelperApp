@@ -21,13 +21,12 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to the Mongo DB
-const uri = process.env.MONGODB_URI
+const uri = process.env.MONGODB_URI || "mongodb://localhost/hubbyhelperapp";
 mongoose.connect(uri, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true
-}
-    || "mongodb://localhost/hubbyhelperapp");
+});
 
 const connection = mongoose.connection;
 connection.once('open', () => {

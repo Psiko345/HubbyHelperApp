@@ -18,8 +18,12 @@ router.post("/", checkJwt, (req, res) => {
     return userController.create(req, res)
 })
 
+router.get("/", checkJwt, (req, res) => {
+    return userController.findAll(req, res)
+})
+
 router.get("/:id", checkJwt, (req, res) => {
-    return userController.findById(req, res)
+    return userController.findAll(req, res)
 })
 
 router.put("/:id", checkJwt, (req, res) => {

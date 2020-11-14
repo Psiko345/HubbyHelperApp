@@ -1,10 +1,13 @@
 const mongoose = require("mongoose");
 const db = require("../models");
+const dotenv = require("dotenv");
 
-mongoose.connect(
-    process.env.MONGODB_URI ||
-    "mongodb://localhost/hubbyhelperapp"
-);
+dotenv.config();
+
+const mongoUrl = process.env.MONGODB_URI ||
+    "mongodb://localhost/hubbyhelperapp";
+console.log(mongoUrl);
+mongoose.connect(mongoUrl);
 
 const userSeed = [
     {
