@@ -12,18 +12,18 @@ const Profile = () => {
     const { getAccessTokenSilently } = useAuth0();
 
     useEffect(() => {
-        console.log("got to start")
+        // console.log("got to start")
         if (hubbyUser)
             return;
-        console.log("got to ifHubbyUser")
+        // console.log("got to ifHubbyUser")
         if (!isAuthenticated)
             return;
-        console.log("got after isAuth")
+        // console.log("got to isAuth")
 
         getAccessTokenSilently().then(
             (token) => {
-                console.log("got to token")
-                console.log(user)
+                // console.log("got to token")
+                // console.log(user)
                 const t = apiUrl + `?email=${user.email}`;
                 console.log(t)
 
@@ -33,9 +33,9 @@ const Profile = () => {
                             Authorization: `Bearer ${token}`
                         }
                     }).then(res => {
-                        console.log(res);
+                        // console.log(res);
                         setHubbyUser(res.json());
-                        console.log("got to hubby user")
+                        // console.log("got to hubby user")
                     }
                     )
             }
@@ -50,7 +50,7 @@ const Profile = () => {
         <div>
             {isAuthenticated && (
                 <div>
-                    <img src={user.picture} alt={user.name} />
+                    <img className="userIcon" src={user.picture} alt={user.name} />
                     <h2>{user.name}</h2>
                     <p>{user.email}</p>
                 </div>

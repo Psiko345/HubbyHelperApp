@@ -14,7 +14,7 @@ const useStyles = makeStyles({
         maxWidth: 345,
     },
     media: {
-        maxHeight: 140,
+        maxHeight: 400,
     },
 });
 
@@ -76,7 +76,7 @@ function GiftGenerator({ budget, incomingCategories }) {
                 <Card className={classes.root}>
                     <CardActionArea>
                         <Typography gutterBottom variant="h5" component="h2">
-                            Let's get her some:
+                            Let's get her:
                     </Typography>
                         <IconGenerator chosenGift={chosenGift} />
                         {!chosenGift && <p>No matching gift</p>}
