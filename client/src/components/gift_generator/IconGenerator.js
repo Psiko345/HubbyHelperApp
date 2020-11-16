@@ -42,7 +42,7 @@ function IconGenerator({ chosenGift }) {
             return earrings
         if (chosenGift.name === "Ring")
             return ring
-        if (chosenGift.name === "Bunch")
+        if (chosenGift.name === "A Bunch")
             return bunch
         if (chosenGift.name === "Single")
             return singleFlower

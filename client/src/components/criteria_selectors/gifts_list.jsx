@@ -20,7 +20,7 @@ export const Gifts = [
     },
     //Flowers
     {
-        name: "Bunch",
+        name: "A Bunch",
         category: "flowers",
         minimumPrice: 100,
         maximumPrice: 500

@@ -24,7 +24,7 @@ function GiftGenerator({ budget, incomingCategories }) {
     console.log({ incomingCategories })
 
     const isInGiftCategory = (aGift, categories) => {
-        console.log({ aGift, categories })
+        // console.log({ aGift, categories })
         if (aGift.category === "jewelry" && categories.jewelry)
             return true
         if (aGift.category === "flowers" && categories.flowers)
@@ -54,13 +54,13 @@ function GiftGenerator({ budget, incomingCategories }) {
 
 
     let possibleMatchingGifts = Gifts.filter(aGift => isInGiftCategory(aGift, incomingCategories));
-    console.log({ possibleMatchingGifts })
+    // console.log({ possibleMatchingGifts })
 
     let random = Math.floor(Math.random() * possibleMatchingGifts.length)
-    console.log({ random })
+    // console.log({ random })
 
     let chosenGift = possibleMatchingGifts[random];
-    console.log({ chosenGift })
+    // console.log({ chosenGift })
 
     useEffect(() => {
         console.log({ chosenGift })
@@ -82,8 +82,8 @@ function GiftGenerator({ budget, incomingCategories }) {
                         {!chosenGift && <p>No matching gift</p>}
                         {chosenGift && (
                             <CardContent>
-                                <Typography variant="body2" color="textSecondary" component="p">
-                                    {chosenGift.name}, with a budget of: {toPriceRange(budget)}
+                                <Typography variant="h4" color="primary" component="p">
+                                    {chosenGift.name}! With a budget of: {toPriceRange(budget)}
                                 </Typography>
                             </CardContent>)}
                     </CardActionArea>
