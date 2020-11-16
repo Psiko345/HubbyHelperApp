@@ -7,6 +7,7 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import IconGenerator from './IconGenerator';
+import SaveGift from './saveGift'
 
 
 const useStyles = makeStyles({
@@ -87,6 +88,7 @@ function GiftGenerator({ budget, incomingCategories }) {
                                 </Typography>
                             </CardContent>)}
                     </CardActionArea>
+                    <SaveGift chosenGift={chosenGift} />
                 </Card>
             )}
         </div>

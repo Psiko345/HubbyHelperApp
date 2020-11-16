@@ -1,10 +1,7 @@
 import React from "react";
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 import { useState, useEffect } from 'react';
-import UserBar from './ProfilePageComponents/UserBar';
 import UserGiftDisplay from './ProfilePageComponents/UserGiftDisplay';
-
-// import axios from 'axios';
 
 const apiUrl = "http://localhost:6060/api/findOrCreateUser"
 
@@ -20,7 +17,7 @@ const Profile = () => {
 
         if (hubbyUser)
             return;
-        console.log("...Confired hubbyUser.")
+        console.log("...Confirmed hubbyUser.")
         if (!isAuthenticated)
             return;
         // console.log("...not hubbyUser, creating...")
@@ -52,7 +49,7 @@ const Profile = () => {
 
     return (
         <div>
-            {/* <UserBar user={user} isAuthenticated={isAuthenticated} /> */}
+
             {hubbyUser && (
                 <UserGiftDisplay user={user} gifts={hubbyUser.giftCollection} isAuthenticated={isAuthenticated} />
             )}
