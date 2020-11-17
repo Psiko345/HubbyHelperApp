@@ -12,6 +12,8 @@ app.use(helmet({
 }));
 app.use(cors({ origin: clientOrigins }));
 
+console.log({ dirname: __dirname });
+
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -20,8 +22,10 @@ if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 }
 
+const publicPath = path.join(__dirname, '..', 'public'); 1
+app.use(express.static(publicPath));
 app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    res.sendFile(path.join(publicPath, 'index.html'));
 });
 
 // Add routes, both API and view
