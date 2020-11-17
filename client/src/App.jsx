@@ -22,10 +22,11 @@ function App() {
         <Navbar />
         <div className="App-main-page">
 
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/gift_generator" component={GiftGeneratorPage} />
-          <Route exact path="/profile" component={Profile} />
-
+          <header className="App-page-1">
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/gift_generator" component={GiftGeneratorPage} />
+            <Route exact path="/profile" component={Profile} />
+          </header>
         </div>
       </div>
     </Router>
