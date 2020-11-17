@@ -9,11 +9,11 @@ export const MenuItems = [
         url: 'gift_generator',
         cName: 'nav-links'
     },
-    {
-        title: 'Gift Schedule',
-        url: '#',
-        cName: 'nav-links'
-    },
+    // {
+    //     title: 'Gift Schedule',
+    //     url: '#',
+    //     cName: 'nav-links'
+    // },
     {
         title: 'Your Profile',
         url: 'profile',

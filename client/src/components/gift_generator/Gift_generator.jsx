@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Gifts } from '../criteria_selectors/gifts_list'
-// import { Button } from '../Button'
+
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -9,7 +9,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import IconGenerator from './IconGenerator';
 import SaveGift from './saveGift'
-import { CardActions, CardHeader } from '@material-ui/core';
+import { CardActions } from '@material-ui/core';
 
 
 const useStyles = makeStyles({
