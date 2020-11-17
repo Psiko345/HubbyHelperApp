@@ -1,7 +1,7 @@
 {
-  "name": "mern",
+  "name": "hubbyhelperapp",
   "version": "1.0.0",
-  "description": "Mern Demo",
+  "description": "An app to help forgetful partners",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",

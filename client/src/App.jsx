@@ -18,16 +18,18 @@ function App() {
 
   return (
     <Router>
-      <Navbar />
-      <div className="App-main-page">
+      <div>
+        <Navbar />
+        <div className="App-main-page">
 
-        <header className="App-page-1">
+          <header className="App-page-1">
 
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/gift_generator" component={GiftGeneratorPage} />
-          <Route exact path="/profile" component={Profile} />
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/gift_generator" component={GiftGeneratorPage} />
+            <Route exact path="/profile" component={Profile} />
 
-        </header>
+          </header>
+        </div>
       </div>
     </Router>
 
