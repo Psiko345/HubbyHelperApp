@@ -2,6 +2,8 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
+console.log(process.env)
+
 const audience = process.env.AUTH0_AUDIENCE;
 const domain = process.env.AUTH0_DOMAIN;
 const serverPort = process.env.SERVER_PORT;
