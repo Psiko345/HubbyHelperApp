@@ -45,12 +45,22 @@ module.exports = {
         db.User
             .findOne({ email: req.query.email })
             .then(dbModel => {
+                console.log("found user")
                 if (dbModel) {
-                    dbModel.giftCollection.push(req.body);
-                    db.User.update(dbModel);
-                    res.json(dbModel)
+                    console.log(dbModel)
+                    dbModel.giftCollection.push({
+                        name: req.body.name,
+                        category: req.body.category,
+                        price: 100
+                    });
+                    console.log(dbModel)
+                    dbModel.save().then(saved_result => {
+                        console.log("Saved!")
+                        res.json(dbModel)
+                    })
                 }
                 else {
+                    console.log("Creating")
                     db.User
                         .create({ email: req.query.email })
                         .then(dbModel => {

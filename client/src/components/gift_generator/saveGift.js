@@ -1,19 +1,33 @@
 import React from 'react'
 import { Button } from '../Button'
+import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 
-
-
-const apiUrl = "http://localhost:6060/api/addGiftToUser/"
 
 const SaveGift = ({ chosenGift }) => {
 
+    const { user, getAccessTokenSilently } = useAuth0();
 
     const giftToBeSaved = chosenGift;
-    console.log(giftToBeSaved)
+
+    const saveGiftToUser = () => {
+        getAccessTokenSilently().then(
+            (token) => {
+                fetch(`/api/addGiftToUser?email=${user.email}`, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    method: "post",
+                    body: JSON.stringify(giftToBeSaved)
+                }).then(res => {
+                    console.log(res)
+                })
+            })
+    }
 
     return (
         <div>
-            <Button>Save gift to profile?</Button>
+            <Button onClick={saveGiftToUser}>Save gift to profile?</Button>
         </div>
     )
 }

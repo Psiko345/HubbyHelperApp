@@ -3,7 +3,7 @@ import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 import { useState, useEffect } from 'react';
 import UserGiftDisplay from './ProfilePageComponents/UserGiftDisplay';
 
-const apiUrl = "http://localhost:6060/api/findOrCreateUser"
+const apiUrl = "api/findOrCreateUser"
 
 const Profile = () => {
     const [hubbyUser, setHubbyUser] = useState();
