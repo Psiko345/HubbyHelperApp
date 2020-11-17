@@ -13,11 +13,11 @@ if (!audience) {
   );
 }
 
-if (!domain) {
-  throw new Error(
-    ".env is missing the definition of an AUTH0_DOMAIN environmental variable",
-  );
-}
+// if (!domain) {
+//   throw new Error(
+//     ".env is missing the definition of an AUTH0_DOMAIN environmental variable",
+//   );
+// }
 
 if (!serverPort) {
   throw new Error(
