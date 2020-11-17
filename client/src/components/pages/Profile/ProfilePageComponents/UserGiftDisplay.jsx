@@ -154,7 +154,7 @@ const UserGiftDisplay = ({ gifts, user, isAuthenticated }) => {
                                             {card.name}
                                         </Typography>
                                         <Typography>
-                                            ${card.price}
+                                            {card.budget}
                                         </Typography>
                                     </CardContent>
                                     <CardActions>
