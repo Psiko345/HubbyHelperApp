@@ -7,7 +7,9 @@ const routes = require("./routes");
 const app = express();
 const PORT = serverPort;
 
-app.use(helmet());
+app.use(helmet({
+    contentSecurityPolicy: false,
+}));
 app.use(cors({ origin: clientOrigins }));
 
 // Define middleware here
