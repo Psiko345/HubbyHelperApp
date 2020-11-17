@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
+const path = require('path');
 const { clientOrigins, serverPort } = require("./config/env.dev");
 const mongoose = require("mongoose");
 const routes = require("./routes");
@@ -20,13 +21,10 @@ app.use(express.json());
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
+    app.get('*', (req, res) => {
+        res.sendFile(path.join("client/build", 'index.html'));
+    });
 }
-
-const publicPath = path.join(__dirname, '..', 'public'); 1
-app.use(express.static(publicPath));
-app.get('*', (req, res) => {
-    res.sendFile(path.join(publicPath, 'index.html'));
-});
 
 // Add routes, both API and view
 app.use(routes);
