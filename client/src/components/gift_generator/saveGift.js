@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from '../Button'
+import Button from '@material-ui/core/Button';
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 
 
@@ -27,7 +27,7 @@ const SaveGift = ({ chosenGift }) => {
 
     return (
         <div>
-            <Button onClick={saveGiftToUser}>Save gift to profile?</Button>
+            <Button variant="contained" color="secondary" onClick={saveGiftToUser}>Save gift to profile?</Button>
         </div>
     )
 }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Gifts } from '../criteria_selectors/gifts_list'
-import { Button } from '../Button'
+// import { Button } from '../Button'
+import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -8,6 +9,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import IconGenerator from './IconGenerator';
 import SaveGift from './saveGift'
+import { CardActions, CardHeader } from '@material-ui/core';
 
 
 const useStyles = makeStyles({
@@ -71,26 +73,34 @@ function GiftGenerator({ budget, incomingCategories }) {
 
     return (
         <div>
-            <Button onClick={handleShowCard}>Generate Gift!</Button>
 
-            {showCard && (
-                <Card className={classes.root}>
-                    <CardActionArea>
-                        <Typography gutterBottom variant="h5" component="h2">
-                            Let's get her:
-                    </Typography>
-                        <IconGenerator chosenGift={chosenGift} />
-                        {!chosenGift && <p>No matching gift</p>}
-                        {chosenGift && (
-                            <CardContent>
-                                <Typography variant="h4" color="primary" component="p">
-                                    {chosenGift.name}! With a budget of: {toPriceRange(budget)}
-                                </Typography>
-                            </CardContent>)}
-                    </CardActionArea>
-                    <SaveGift chosenGift={chosenGift} />
-                </Card>
-            )}
+
+
+            <Card className={classes.root}>
+                <CardActions>
+                    {/* <p>some text</p> */}
+                    <Button variant="contained" color="primary" onClick={handleShowCard}>Generate Gift!</Button>
+                </CardActions>
+                {showCard && (
+                    <div>
+                        <CardActionArea>
+                            <Typography gutterBottom variant="h5" component="h2">
+                                Let's get her:
+                        </Typography>
+                            <IconGenerator chosenGift={chosenGift} />
+                            {!chosenGift && <p>No matching gift</p>}
+                            {chosenGift && (
+                                <CardContent>
+                                    <Typography variant="h4" color="primary" component="p">
+                                        {chosenGift.name}! With a budget of: {toPriceRange(budget)}
+                                    </Typography>
+                                </CardContent>)}
+                        </CardActionArea>
+                        <SaveGift chosenGift={chosenGift} />
+                    </div>
+                )}
+            </Card>
+
         </div>
     )
 }

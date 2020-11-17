@@ -19,6 +19,7 @@ import sneakers from './icons/sneakers.png'
 import tops from './icons/tops.png'
 import weekendRetreat from './icons/weekendRetreat.png'
 import weekGetaway from './icons/weekGetaway.svg'
+import noSelection from './icons/error.png'
 
 
 const useStyles = makeStyles({
@@ -36,6 +37,8 @@ function IconGenerator({ chosenGift }) {
     const classes = useStyles();
 
     const matchGiftNameToIcon = (chosenGift) => {
+        if (chosenGift === undefined)
+            return noSelection;
         if (chosenGift.name === "Necklace")
             return necklace
         if (chosenGift.name === "Earrings")
@@ -70,7 +73,6 @@ function IconGenerator({ chosenGift }) {
             return highHeels
         if (chosenGift.name === "Dress Shoes")
             return dressShoes
-        return "Unknown";
     }
 
     return (

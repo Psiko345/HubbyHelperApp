@@ -28,12 +28,12 @@ function GiftGeneratorPage() {
     });
 
     const [categories, setCategories] = useState({
-        jewelry: false,
-        flowers: false,
-        getaways: false,
-        consumables: false,
-        clothes: false,
-        shoes: false,
+        jewelry: true,
+        flowers: true,
+        getaways: true,
+        consumables: true,
+        clothes: true,
+        shoes: true,
     });
 
     const [showCard, setShowCard] = useState({

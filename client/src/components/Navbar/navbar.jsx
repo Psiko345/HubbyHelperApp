@@ -27,8 +27,10 @@ class Navbar extends Component {
                             </li>
                         )
                     })}
+                    <li>
+                        <a className="nav-links"><AuthenticationButton /></a>
+                    </li>
                 </ul>
-                <AuthenticationButton />
             </nav>
         )
     }
