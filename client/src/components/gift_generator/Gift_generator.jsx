@@ -62,7 +62,8 @@ function GiftGenerator({ budget, incomingCategories }) {
     let random = Math.floor(Math.random() * possibleMatchingGifts.length)
     // console.log({ random })
 
-    let chosenGift = possibleMatchingGifts[random];
+    let chosenGift = { budget: toPriceRange(budget), ...possibleMatchingGifts[random] };
+
     // console.log({ chosenGift })
 
     useEffect(() => {

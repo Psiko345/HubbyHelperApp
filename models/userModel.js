@@ -8,7 +8,7 @@ const userSchema = new Schema({
         name: { type: String, required: true },
         category: { type: String, required: true },
         image: { type: String },
-        price: Number,
+        budget: { type: String },
         date: { type: Date, default: Date.now }
     }]
 }, { timestamps: true });

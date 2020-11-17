@@ -45,14 +45,13 @@ module.exports = {
         db.User
             .findOne({ email: req.query.email })
             .then(dbModel => {
-                console.log("found user")
+                console.log("found user");
+                const aGift = {
+                    ...req.body
+                }
                 if (dbModel) {
                     console.log(dbModel)
-                    dbModel.giftCollection.push({
-                        name: req.body.name,
-                        category: req.body.category,
-                        price: 100
-                    });
+                    dbModel.giftCollection.push(aGift);
                     console.log(dbModel)
                     dbModel.save().then(saved_result => {
                         console.log("Saved!")
@@ -64,7 +63,7 @@ module.exports = {
                     db.User
                         .create({ email: req.query.email })
                         .then(dbModel => {
-                            dbModel.giftCollection.push(req.body);
+                            dbModel.giftCollection.push(aGift);
                             db.User.update(dbModel);
                             res.json(dbModel)
                         })
