@@ -1,7 +1,7 @@
 {
   "name": "hubby-helper-app",
   "version": "0.1.0",
-  "private": true, 
+  "private": true,
   "proxy": "http://localhost:6060/",
   "dependencies": {
     "@auth0/auth0-react": "^1.1.0",
