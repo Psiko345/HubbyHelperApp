@@ -4,10 +4,12 @@ dotenv.config();
 
 console.log(process.env)
 
-const audience = process.env.AUTH0_AUDIENCE;
 const domain = process.env.AUTH0_DOMAIN;
-const serverPort = process.env.SERVER_PORT;
+const serverPort = process.env.PORT;
 const clientOriginUrl = process.env.CLIENT_ORIGIN_URL;
+const audience = `http://localhost:{serverPort}`;
+
+console.log({ audience, domain });
 
 if (!audience) {
   throw new Error(
@@ -15,11 +17,11 @@ if (!audience) {
   );
 }
 
-// if (!domain) {
-//   throw new Error(
-//     ".env is missing the definition of an AUTH0_DOMAIN environmental variable",
-//   );
-// }
+if (!domain) {
+  throw new Error(
+    ".env is missing the definition of an AUTH0_DOMAIN environmental variable",
+  );
+}
 
 if (!serverPort) {
   throw new Error(
