@@ -72,15 +72,15 @@ function GiftGenerator({ budget, incomingCategories }) {
 
     const handleShowCard = () => setShowCard(!showCard)
 
+
     return (
         <div>
 
 
 
             <Card className={classes.root}>
-                <CardActions>
-                    {/* <p>some text</p> */}
-                    <Button variant="contained" color="primary" onClick={handleShowCard}>Generate Gift!</Button>
+                <CardActions style={{ justifyContent: 'center' }}>
+                    <Button variant="contained" color='primary' onClick={handleShowCard}>Generate Gift!</Button>
                 </CardActions>
                 {showCard && (
                     <div>
