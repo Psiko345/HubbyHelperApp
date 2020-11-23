@@ -6,7 +6,9 @@
 
 <br>
 
-![HubbyHelperAppCoverImage](./readme-props/cover-image.png)
+## A Quick Demo
+
+![HubbyHelperAppDemo](./readme-props/hubby-helper-demo.gif)
 
 <br>
 
