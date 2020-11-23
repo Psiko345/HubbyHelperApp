@@ -2,22 +2,22 @@
 
 ### Created by Joshua Piper
 # Hubby Helper App
- [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)]
+ ![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
 
 <br>
 
-![HubbyHelperAppCoverImage](./readme-props/cover_image.png)
+![HubbyHelperAppCoverImage](./readme-props/cover-image.png)
 
 <br>
 
 ## Table of Contents
-- [Links](###Links)
-- [Description](###Description)
-- [Concept/Motivation](###Concept/Motivation)
-- [Features](###Features)
-- [Scope of future development](###Scopeoffuturedevelopment) 
-- [Contact](###Contact)
-- [Contributing](###Contributing)
+- [Links](##Links)
+- [Description](##Description)
+- [Concept/Motivation](##Concept/Motivation)
+- [Features](##Features)
+- [Scope of future development](##Scopeoffuturedevelopment) 
+- [Contact](##Contact)
+- [Contributing](##Contributing)
 
 
  ## Links
